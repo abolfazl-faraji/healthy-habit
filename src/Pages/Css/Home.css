@@ -1,0 +1,825 @@
+@font-face {
+  font-family: shabnam-bold;
+  src: url(../../font/Shabnam-Bold.woff);
+}
+
+@font-face {
+  font-family: shabnam-light;
+  src: url(../../font/Shabnam-Light.woff);
+}
+
+@font-face {
+  font-family: shabnam-medium;
+  src: url(../../font/Shabnam-Medium.woff);
+}
+
+@font-face {
+  font-family: shabnam-thin;
+  src: url(../../font/Shabnam-Thin.woff);
+}
+
+body {
+  margin: 0;
+  text-align: right;
+  direction: rtl;
+  font-family: shabnam-medium;
+  background-color: #b3cece;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+#hd {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.82),
+      rgba(0, 0, 0, 0.82)), url("../../img/library.jpg");
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.20);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 100%;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  .hd-txt {
+    width: 100%;
+
+    h1 {
+      text-align: center;
+      font-family: shabnam-medium;
+      font-size: 60px;
+      color: #e22323;
+      margin-top: 90px;
+    }
+
+    h3 {
+      color: #fff;
+      font-family: shabnam-thin;
+      font-size: 33px;
+      text-align: center;
+      padding: 0px 20px 0 20px;
+
+      .cn-chng {
+        font-family: shabnam-bold;
+        position: absolute;
+        width: 105px;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.5s;
+        color: #7e90e4;
+      }
+
+      .cn-chng.shw {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    h5 {
+      position: absolute;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.5s;
+      color: #7e90e4;
+      text-align: center;
+      width: 100%;
+      font-size: 16px;
+      margin-top: 0px;
+
+    }
+
+    h5.shw {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+.hd-btn {
+  display: flex;
+  width: 85%;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  li {
+    display: flex;
+    justify-content: center;
+
+    a {
+      text-decoration: none;
+      align-items: center;
+      background-color: #FCFCFD;
+      border-radius: 4px;
+      border-width: 0;
+      box-shadow: rgba(126, 144, 228, 0.3) 0 2px 4px, rgba(126, 144, 228, 0.2) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+      box-sizing: border-box;
+      color: #000000;
+      cursor: pointer;
+      display: inline-flex;
+      height: 48px;
+      overflow: hidden;
+      padding-left: 20px;
+      padding-right: 20px;
+      position: relative;
+      text-align: left;
+      text-decoration: none;
+      transition: box-shadow .15s, transform .15s;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      will-change: box-shadow, transform;
+    }
+
+    a:focus {
+      box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    }
+
+    a:hover {
+      box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+      transform: translateY(-2px);
+    }
+
+    a:active {
+      box-shadow: #D6D6E7 0 3px 7px inset;
+      transform: translateY(2px);
+    }
+  }
+}
+
+.search-input {
+  width: 500px;
+  padding: 25px 30px;
+
+  text-align: left;
+  font-size: 18px;
+
+  color: #c9c5c5;
+  background-color: transparent;
+  background-image: url("../../img/search.png");
+  background-repeat: no-repeat;
+  background-size: 27px 27px;
+  background-position: 95% center;
+  border-radius: 50px;
+  border: 1px solid #7e90e4;
+  transition: all 250ms ease-in-out;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+
+  &::placeholder {
+    color: color(#7e90e4 a(0.8));
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+
+  &:hover,
+  &:focus {
+    outline: 0;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #7e90e4;
+    border-radius: 0;
+    background-position: 99% center;
+  }
+}
+
+#ss {
+  height: 1000px;
+}
+
+.section1 {
+  width: 100%;
+  height: 240px;
+  text-align: center;
+  margin-top: 60px;
+
+  .box {
+    box-sizing: border-box;
+    text-align: right;
+    margin: 0px 15px;
+    background-color: #e4f3f0;
+    width: 23%;
+    height: 100%;
+    display: inline-block;
+    border-radius: 28px;
+    padding: 2%;
+    position: relative;
+
+    img {
+      display: inline-block;
+      width: 15%;
+      position: absolute;
+      top: 9%;
+      right: 7%;
+    }
+
+    h3 {
+      margin: 0% 18% 0 0;
+      display: inline-block;
+      font-size: 25px;
+    }
+
+    p {
+      display: flex;
+      font-size: 16px;
+      margin: 25px 2px;
+    }
+  }
+
+
+  .box-link {
+    position: relative;
+    position: absolute;
+    text-decoration: none;
+    color: inherit;
+    bottom: 8%;
+    right: 7%;
+    font-size: 17px;
+
+    i {
+      font-size: 30px;
+      color: black;
+      position: absolute;
+      top: -2%;
+      left: -57%;
+    }
+  }
+
+  .box-link:hover {
+    transition: all 200ms ease-in-out;
+    font-size: 19px;
+
+    i {
+      font-size: 31px;
+    }
+  }
+}
+
+.most-popular-uni-header {
+  width: 100%;
+  height: 120px;
+  text-align: center;
+  align-content: end;
+
+  h3 {
+    font-size: 30px;
+    margin: 0px;
+  }
+
+  hr {
+    width: 50%;
+    border: 3px solid black;
+    border-radius: 50%;
+  }
+}
+
+.most-popular-university-box {
+  box-sizing: border-box;
+  background-color: #d8efeb;
+  border-radius: 28px;
+  margin: auto;
+  width: 55%;
+  height: 460px;
+  position: relative;
+  text-align: center;
+
+
+  .most-popular-university-photo {
+    margin: 20px;
+    background-image: linear-gradient(rgba(181, 181, 181, 0.2), rgba(0, 0, 0, 0.7)), url(../../img/most-popular-university-photo.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 18px;
+    width: 30%;
+    height: 90%;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .most-popular-university-list {
+    box-sizing: border-box;
+    display: inline-block;
+    align-content: center;
+    padding: 0;
+    width: 61%;
+    height: 90%;
+    margin-right: 33%;
+    text-align: center;
+
+
+    .most-popular-university-option {
+      list-style-type: none;
+      width: 100%;
+      position: relative;
+      align-content: center;
+      text-align: right;
+
+      .uni-name {
+        max-width: 60%;
+        font-size: 15px;
+        display: inline-block;
+        margin: 7px;
+      }
+
+      div {
+        display: inline-block;
+        position: absolute;
+        left: 0;
+
+        .uni-rank {
+          font-size: 15px;
+          display: inline-block;
+          margin: 7px;
+
+          i {
+            color: #009ae0;
+          }
+        }
+
+        .uni-teachers-avrage {
+          font-size: 15px;
+          display: inline-block;
+          margin: 7px;
+
+          i {
+            color: #db9413;
+          }
+        }
+      }
+    }
+
+    .most-popular-university-hr {
+      color: black;
+      border: 1px solid black;
+      margin: 3px;
+      width: 100%;
+    }
+
+    .more-button {
+      display: inline-block;
+      width: 15%;
+
+      i {
+        font-size: 26px;
+        color: black;
+      }
+    }
+  }
+}
+
+.books-section-header {
+  h1 {
+    font-size: 30px;
+    width: 170px;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 10px;
+  }
+
+  hr {
+    width: 720px;
+    color: black;
+    border: 3px solid black;
+    border-radius: 50%;
+  }
+}
+
+.books-section {
+  margin: auto;
+  background-color: #d8efeb;
+  width: 800px;
+  height: 520px;
+  border-radius: 28px;
+  text-align: center;
+  position: relative;
+
+
+  .books-section-list {
+    list-style-type: none;
+    padding: 10px 20px;
+    margin: 0 0 20px 0;
+    height: 60px;
+
+    a {
+      color: black;
+
+      .books-section-op {
+        background-color: #b3cece;
+        display: inline-block;
+        width: 115px;
+        text-align: center;
+        align-content: center;
+        margin: 15px 4px;
+        height: 50px;
+        box-shadow: 0px 3px 3px -1px black;
+        border-radius: 8px;
+        position: relative;
+
+        i {
+          font-size: 25px;
+          color: black;
+          position: absolute;
+          top: 12px;
+          left: 22px;
+        }
+      }
+
+      .books-section-op:hover {
+        transform: translateY(2px);
+        transition: all 200ms ease-in-out;
+        box-shadow: 0px 0px 0px;
+        background-color: #a0b6b6;
+      }
+    }
+  }
+
+  .book-card {
+    box-sizing: border-box;
+    width: 365px;
+    height: 180px;
+    background-color: #b3cece;
+    display: inline-block;
+    margin: 10px;
+    position: relative;
+    border-radius: 8px;
+    padding: 10px;
+    padding-right: 140px;
+    text-align: right;
+
+
+
+    .book-image {
+      background-color: green;
+      width: 110px;
+      height: 150px;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      border-radius: 4px;
+    }
+
+    .book-name {
+      font-size: 20px;
+      margin: 10px 6px 6px 6px;
+    }
+
+    .book-writer {
+      display: inline-block;
+      font-size: 16px;
+      margin: 6px;
+      padding-left: 10px;
+      border-left: 3px solid black;
+    }
+
+    .book-translator {
+      display: inline-block;
+      font-size: 16px;
+      margin: 6px;
+    }
+
+    .book-score {
+      margin: 10px 6px;
+      font-size: 16px;
+
+      i {
+        color: orange;
+        margin-left: 5px;
+      }
+    }
+
+    .book-price {
+      position: absolute;
+      left: 15px;
+      bottom: 15px;
+    }
+
+  }
+}
+
+@media screen and (max-width: 1400px) {}
+
+@media screen and (max-width: 1200px) {
+  .section1 {
+    height: 210px;
+
+    .box {
+      padding: 1.5%;
+
+      h3 {
+        margin: 3% 20% 0 0;
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 15px;
+      }
+    }
+
+    .box-link {
+
+      i {
+        font-size: 27px;
+      }
+    }
+
+    .box-link:hover {
+      font-size: 18px;
+
+      i {
+        font-size: 30px;
+      }
+    }
+  }
+
+  .most-popular-uni-header {
+    height: 120px;
+
+    h3 {
+      font-size: 28px;
+    }
+  }
+
+  .most-popular-university-box {
+    width: 62%;
+    height: 420px;
+
+    .most-popular-university-list {
+      margin-top: 25px;
+
+      .uni-name {
+        font-size: 14px;
+      }
+
+      div {
+        .uni-rank {
+          font-size: 14px;
+        }
+
+        .uni-teachers-avrage {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .more-button {
+    font-size: 15px;
+
+    i {
+      font-size: 28px;
+      top: -3px;
+      left: -17px;
+    }
+  }
+}
+
+@media screen and (max-width:950px) {
+  #hd div h3 {
+    font-size: 30px;
+
+    .cn-chng {
+      width: 90px;
+    }
+  }
+
+  .section1 {
+    height: 190px;
+    margin-top: 50px;
+
+    .box {
+
+      h3 {
+        margin: 4% 20% 0 0;
+        font-size: 17px;
+      }
+
+      p {
+        font-size: 13px;
+        margin: 20px 2px;
+      }
+    }
+
+
+    .box-link {
+      font-size: 15px;
+
+      i {
+        font-size: 25px;
+      }
+    }
+
+    .box-link:hover {
+      font-size: 17px;
+
+      i {
+        font-size: 28px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .section1 {
+    height: 160px;
+    margin-top: 45px;
+
+    .box {
+      margin: 0px 10px;
+      border-radius: 22px;
+
+      img {
+        width: 17%;
+        top: 8%;
+      }
+
+      h3 {
+        margin: 4% 22% 0 0;
+        font-size: 16px;
+      }
+
+      p {
+        font-size: 13px;
+        margin: 25px 1px;
+      }
+    }
+
+    .box-link {
+      bottom: 7%;
+      font-size: 15px;
+
+      i {
+        font-size: 22px;
+        top: -1%;
+        left: -50%;
+      }
+    }
+
+    .box-link:hover {
+      font-size: 16px;
+
+      i {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:600px) {
+  .section1 {
+    height: 120px;
+    margin-top: 35px;
+
+    .box {
+      margin: 0px 8px;
+      border-radius: 20px;
+
+      img {
+        width: 17%;
+        top: 8%;
+        right: 7%;
+      }
+
+      h3 {
+        margin: 2% 22% 0 0;
+        font-size: 14px;
+      }
+
+      p {
+        font-size: 10px;
+        margin: 10px 1px;
+      }
+    }
+
+    .box-link {
+      bottom: 8%;
+      right: 7%;
+      font-size: 13px;
+
+      i {
+        font-size: 18px;
+        top: 10%;
+        left: -45%;
+      }
+    }
+
+    .box-link:hover {
+      font-size: 15px;
+
+      i {
+        top: 5%;
+        font-size: 20px;
+      }
+    }
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  .section1 {
+    height: 110px;
+    margin-top: 35px;
+
+    .box {
+      border-radius: 15px;
+
+      img {
+        width: 18%;
+        top: 8%;
+        right: 7%;
+      }
+
+      h3 {
+        margin: 0% 22% 0 0;
+        font-size: 12px;
+      }
+
+      p {
+        font-size: 9px;
+        margin: 5px 1px;
+      }
+    }
+
+    .box-link {
+      bottom: 7%;
+      right: 9%;
+      font-size: 11px;
+
+      i {
+        font-size: 15px;
+        top: 7%;
+        left: -45%;
+      }
+    }
+
+    .box-link:hover {
+      font-size: 13px;
+
+      i {
+        font-size: 17px;
+        top: 12%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:400px) {
+  #hd div h3 {
+    font-size: 23px;
+
+    .cn-chng {
+      width: 70px;
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .section1 {
+    height: 60px;
+    margin-top: 20px;
+
+    .box {
+      margin: 0px 5px;
+      border-radius: 12px;
+      padding: 0;
+
+      img {
+        width: 17%;
+      }
+
+      h3 {
+        margin: 0% 28% 0 0;
+        font-size: 8px;
+      }
+
+      p {
+        font-size: 5px;
+        margin: 0px 7px;
+      }
+    }
+
+    .box-link {
+      bottom: 8%;
+      right: 7%;
+      font-size: 7px;
+
+      i {
+        font-size: 9px;
+        top: 9%;
+        left: -45%;
+      }
+    }
+
+    .box-link:hover {
+      font-size: 8px;
+
+      i {
+        font-size: 10px;
+        top: 19%;
+      }
+    }
+  }
+}

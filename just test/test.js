@@ -1,0 +1,1 @@
+console.log("سلام از Node.js!");
